@@ -17,7 +17,7 @@ jobs:
     needs: build-test
     uses: ./.github/workflows/reusable-docker.yml
     with:
-      image_name: your-dockerhub-username/github-actions-app
+      image_name: sripadma996/github-actions-app
       tag: latest
     secrets:
       docker_username: ${{ secrets.DOCKER_USERNAME }}
@@ -30,7 +30,7 @@ jobs:
       - name: Scan Docker Image
         uses: aquasecurity/trivy-action@master
         with:
-          image-ref: 'your-dockerhub-username/github-actions-app:latest'
+          image-ref: 'sripadma996/github-actions-app:latest'
           format: 'table'
           exit-code: '1'
           severity: 'CRITICAL,HIGH'
